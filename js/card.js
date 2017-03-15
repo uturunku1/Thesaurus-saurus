@@ -10,4 +10,11 @@ Card.prototype.getContent = function () {
 Card.prototype.getPos = function () {
   return this.pos;
 };
+Card.prototype.toggleStatus = function () {
+  if (this.status===0) {
+    this.status=1;
+  }else {
+    this.status=0;
+  }
+};
 exports.cardModule = Card;
