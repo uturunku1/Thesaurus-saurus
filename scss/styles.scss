@@ -1,0 +1,21 @@
+body {
+  height: 1200px;
+  background: url('/../img/jurassic-background1.jpeg') no-repeat center center;
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+}
+.col-sm-2 {
+  border: 2px solid black;
+}
+.col-sm-6 {
+  border: 2px solid black;
+}
+#form {
+  background-color: lightgreen;
+}
+#game {
+  display: none;
+  background: rgba(141, 235, 252, .5);
+}

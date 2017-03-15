@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>thesaurus-saurus</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+
+        <h1>Thesaurus-Saurus</h1>
+      </div>
+      <!-- jumbotron -->
+      <div class="jumbotron" id="form">
+        <h4>Enter your name to start the game!</h4>
+        <form class="form-group" id="intake-form">
+          <label for="player-one-name">Player One Name</label><br>
+          <input type="text" id="player-one-name" value="Steve"><br>
+          <label for="player-two-name">Player Two Name</label><br>
+          <input type="text" id="player-two-name" value="Johanna"><br>
+          <label for="difficulty">Difficulty</label><br>
+          <input type="number" id="difficulty" value="1"><br>
+          <button type="submit" class="btn button-success">Submit</button>
+        </form>
+      </div>
+      <!-- jumbotron -->
+      <div id="game">
+        <div class="row">
+          <div class="col-sm-2" id="card1" >
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card2">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card3">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card4">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card5">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card6">
+            <h3>Test</h3>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+          <div class="col-sm-2" id="card7">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card8">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card9">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card10">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card11">
+            <h3>Test</h3>
+          </div>
+          <div class="col-sm-2" id="card12">
+            <h3>Test</h3>
+          </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+          <div class="col-sm-6">
+            <h3><span id='player1_name'></span></h3>
+            <h4>P1 Score: <span id='player1_score'></span></h4>
+          </div>
+          <div class="col-sm-6">
+            <h3><span id='player2_name'></span></h3>
+            <h4>P2 Score: <span id='player2_score'></span></h4>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- game -->
+    </div>
+    <!-- container -->
+  </body>
+</html>
