@@ -1,3 +1,5 @@
+// var Player = require('./../js/player.js').playerModule;
+
 function Card(pos, content, status)
 {
   this.pos= pos;
@@ -16,5 +18,11 @@ Card.prototype.toggleStatus = function () {
   }else {
     this.status=0;
   }
+};
+Card.prototype.upgradeScore = function (compareContent, pScore) {
+  if (this.content===compareContent) {
+    pScore +=1;
+  }
+  return pScore;
 };
 exports.cardModule = Card;
