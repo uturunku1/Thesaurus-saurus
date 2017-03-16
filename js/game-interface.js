@@ -89,38 +89,50 @@ $(document).ready(function() {
     // $('.flipped').toggle();
     var indexOfCard = parseInt($(this)[0].id);
     console.log(indexOfCard);
-    // card1.toggleStatus();
+    deckOfCards[indexOfCard].toggleStatus();
     // console.log("player1 flipped Card: " + player1.flippedCard);
     console.log("card1 content: " + deckOfCards[indexOfCard].content);
     console.log("card1 status: " + deckOfCards[indexOfCard].status);
-    // if(card1.status===1) {
-    //   $(this).removeClass('unflipped');
-    //   $(this).addClass('flipped');
-    //   $('#card2').removeClass('flipped');
-    //   $('#card2').addClass('unflipped');
-    //
-    // }
-    // // else if (this.flippedCard!=compareContent) {
-    // //   $(this).removeClass('unflipped');
-    // // }else if (this.flippedCard===compareContent) {
-    // //   $(this).addClass('flipped');
-    // // }
-    // else {
-    //   $(this).removeClass('flipped');
+    if(deckOfCards[indexOfCard].status===1) {
+      $(this).removeClass('unflipped');
+      $(this).addClass('flipped');
+      if (indexOfCard<7) {
+        var cardsToUnflip = ['1','2','3','4','5','6'];
+        console.log(cardsToUnflip);
+        cardsToUnflip.splice((indexOfCard-1),1);
+        console.log("cardsToUnflip" + cardsToUnflip);
+        console.log("cardsToUnflip typeof" + typeof(cardsToUnflip[0]))
+        for (var i = 0; i < cardsToUnflip.length; i++) {
+          // $(cardsToUnflip[i]).removeClass('flipped');
+          $(cardsToUnflip[i]).addClass('unflipped');
+          console.log("cardsToUnflip[i]" + cardsToUnflip[i]);
+        }
+
+      }
+
+    }
+    // else if (this.flippedCard!=deckOfCards[indexOfCard].content) {
     //   $(this).addClass('unflipped');
+    // }else if (this.flippedCard===deckOfCards[indexOfCard].content) {
+    //   $(this).removeClass('unflipped');
     // }
-    // if (player1.flippedCard==="") {
-    //   player1.flipCard(card1.content);
-    //   // console.log(player1.flippedCard);
-    //   // console.log("card1 content: " + card1.content);
-    // }else {
-    //   player1.updateScore(card1.content);
-    //   // console.log(player1.flippedCard);
-    //   // console.log("card1 content: " + card1.content);
-    // }
-    //
-    // var new_score = player1.score;
-    // $('#player1_score').text(new_score);
+    else {
+      $(this).removeClass('flipped');
+      $(this).addClass('unflipped');
+    }
+    if (player1.flippedCard==="") {
+      player1.flipCard(deckOfCards[indexOfCard].content);
+      // console.log(player1.flippedCard);
+      // console.log("card1 content: " + card1.content);
+    }else {
+      player1.updateScore(deckOfCards[indexOfCard].content);
+      // console.log(player1.flippedCard);
+      // console.log("card1 content: " + card1.content);
+    }
+
+    var new_score = player1.score;
+    $('#player1_score').text(new_score);
+
   });
 
   //
