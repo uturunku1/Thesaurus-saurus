@@ -4,23 +4,23 @@ function Game(){
 
 }
 
-Game.prototype.shuffleCards = function(array) {
-	  var currentIndex = contentArr.length, temporaryValue, randomIndex;
-
-	  // While there remain elements to shuffle...
-	  while (0 !== currentIndex) {
-
-	    // Pick a remaining element...
-	    randomIndex = Math.floor(Math.random() * currentIndex);
-	    currentIndex -= 1;
-
-	    // And swap it with the current element.
-	    temporaryValue = shuflleArr[currentIndex];
-	    shuflleArr[currentIndex] = shuflleArr[randomIndex];
-	    shuflleArr[randomIndex] = temporaryValue;
-	  }
-
-}
+// Game.prototype.shuffleCards = function(array) {
+// 	  var currentIndex = contentArr.length, temporaryValue, randomIndex;
+//
+// 	  // While there remain elements to shuffle...
+// 	  while (0 !== currentIndex) {
+//
+// 	    // Pick a remaining element...
+// 	    randomIndex = Math.floor(Math.random() * currentIndex);
+// 	    currentIndex -= 1;
+//
+// 	    // And swap it with the current element.
+// 	    temporaryValue = array[currentIndex];
+// 	    array[currentIndex] = array[randomIndex];
+// 	    array[randomIndex] = temporaryValue;
+// 	  }
+//
+// }
 
 Game.prototype.getDinos = function(displayDinos, displayErrors){
 
@@ -37,7 +37,7 @@ Game.prototype.getDinos = function(displayDinos, displayErrors){
     contentArr.push(response[0][3]);
     contentArr.push(response[0][4]);
     contentArr.push(response[0][5]);
-    console.log(contentArr);
+    console.log("contentArr " + contentArr);
 
     // instantiate card objects
     card1 = new Card('card1', response[0][0], 0);
@@ -48,30 +48,21 @@ Game.prototype.getDinos = function(displayDinos, displayErrors){
     card6 = new Card('card6', response[0][5], 0);
 
     // shuffle the content array
+		var indexArr = [];
+		var shuffleArr= ["","","","","",""];
+	  var count = 0;
+	  while (indexArr.length<6) {
 
-		var shuffleArr = contentArr.splice(0);
-		console.log(shuflleArr);
-		console.log(contentArr);
-		var currentIndex = shuffleArr.length, temporaryValue, randomIndex;
+			var new_number= Math.floor(Math.random() * 6);
+			if (!(indexArr.includes(new_number))) {
+				indexArr.push(new_number);
+				shuffleArr.splice(new_number,1,contentArr[count]);
+        count++;
 
-	  // While there remain elements to shuffle...
-	  while (0 !== currentIndex) {
-
-	    // Pick a remaining element...
-	    randomIndex = Math.floor(Math.random() * currentIndex);
-	    currentIndex -= 1;
-
-	    // And swap it with the current element.
-	    temporaryValue = shuflleArr[currentIndex];
-	    shuflleArr[currentIndex] = shuflleArr[randomIndex];
-	    shuflleArr[randomIndex] = temporaryValue;
-
+			}
 		}
 
-		//
-    // var shuffleArr = game.shuffleCards(contentArr);
-
-    console.log(shuffleArr);
+    console.log("shuffleArr " + shuffleArr);
     card7 = new Card('card7', shuffleArr[0], 0);
     card8 = new Card('card8', shuffleArr[1], 0);
     card9 = new Card('card9', shuffleArr[2], 0);
