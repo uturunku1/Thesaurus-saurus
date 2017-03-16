@@ -19,10 +19,10 @@ Card.prototype.toggleStatus = function () {
     this.status=0;
   }
 };
-Card.prototype.upgradeScore = function (compareContent, pScore) {
-  if (this.content===compareContent) {
-    pScore +=1;
-  }
-  return pScore;
-};
+// Card.prototype.upgradeScore = function (compareContent, pScore) {
+//   if (this.content===compareContent) {
+//     pScore +=1;
+//   }
+//   return pScore;
+// };
 exports.cardModule = Card;
