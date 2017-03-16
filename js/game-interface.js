@@ -50,6 +50,8 @@ $(document).ready(function() {
   var card10 = new Card('card10',"", 0);
   var card11 = new Card('card11',"", 0);
   var card12 = new Card('card12',"", 0);
+  var deckOfCards = ["dummy", card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12];
+  console.log("deckOfCards: " + deckOfCards[1].content);
 
 
   $('#intake-form').submit(function(event) {
@@ -82,267 +84,314 @@ $(document).ready(function() {
   });
   // submit form
 
-
-  $('#card1').click(function(event){
+  $('.col-sm-2').click(function(event){
     event.preventDefault();
     // $('.flipped').toggle();
-    card1.toggleStatus();
-    console.log("player1 flipped Card: " + player1.flippedCard);
-    console.log("card1 content: " + card1.content);
-    console.log("card1 status: " + card1.status);
-    if(card1.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card1.content);
-      console.log(player1.flippedCard);
-      console.log("card1 content: " + card1.content);
-    }else {
-      player1.updateScore(card1.content);
-      console.log(player1.flippedCard);
-      console.log("card1 content: " + card1.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
+    var indexOfCard = parseInt($(this)[0].id);
+    console.log(indexOfCard);
+    // card1.toggleStatus();
+    // console.log("player1 flipped Card: " + player1.flippedCard);
+    console.log("card1 content: " + deckOfCards[indexOfCard].content);
+    console.log("card1 status: " + deckOfCards[indexOfCard].status);
+    // if(card1.status===1) {
+    //   $(this).removeClass('unflipped');
+    //   $(this).addClass('flipped');
+    //   $('#card2').removeClass('flipped');
+    //   $('#card2').addClass('unflipped');
+    //
+    // }
+    // // else if (this.flippedCard!=compareContent) {
+    // //   $(this).removeClass('unflipped');
+    // // }else if (this.flippedCard===compareContent) {
+    // //   $(this).addClass('flipped');
+    // // }
+    // else {
+    //   $(this).removeClass('flipped');
+    //   $(this).addClass('unflipped');
+    // }
+    // if (player1.flippedCard==="") {
+    //   player1.flipCard(card1.content);
+    //   // console.log(player1.flippedCard);
+    //   // console.log("card1 content: " + card1.content);
+    // }else {
+    //   player1.updateScore(card1.content);
+    //   // console.log(player1.flippedCard);
+    //   // console.log("card1 content: " + card1.content);
+    // }
+    //
+    // var new_score = player1.score;
+    // $('#player1_score').text(new_score);
   });
 
-  $('#card2').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card2.toggleStatus();
-
-    if(card2.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card2.content);
-    }else {
-      player1.updateScore(card2.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-
-  $('#card3').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card3.toggleStatus();
-
-    if(card3.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card3.content);
-    }else {
-      player1.updateScore(card3.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card4').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card4.toggleStatus();
-
-    if(card4.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card4.content);
-    }else {
-      player1.updateScore(card4.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card5').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card5.toggleStatus();
-
-    if(card5.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card5.content);
-    }else {
-      player1.updateScore(card5.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card6').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card6.toggleStatus();
-
-    if(card6.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card6.content);
-    }else {
-      player1.updateScore(card6.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card7').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card7.toggleStatus();
-
-    if(card7.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card7.content);
-    }else {
-      player1.updateScore(card7.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card8').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card8.toggleStatus();
-
-    if(card8.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card8.content);
-    }else {
-      player1.updateScore(card8.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card9').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card9.toggleStatus();
-
-    if(card9.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card9.content);
-    }else {
-      player1.updateScore(card9.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card10').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card10.toggleStatus();
-
-    if(card10.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card10.content);
-    }else {
-      player1.updateScore(card10.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card11').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card11.toggleStatus();
-
-    if(card11.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card11.content);
-    }else {
-      player1.updateScore(card11.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
-  $('#card12').click(function(event){
-    event.preventDefault();
-    // $('.flipped').toggle();
-    card12.toggleStatus();
-
-    if(card12.status===1) {
-      $(this).removeClass('unflipped');
-      $(this).addClass('flipped');
-    } else {
-      $(this).removeClass('flipped');
-      $(this).addClass('unflipped');
-    }
-    if (player1.flippedCard==="") {
-      player1.flipCard(card12.content);
-    }else {
-      player1.updateScore(card12.content);
-    }
-
-    var new_score = player1.score;
-    $('#player1_score').text(new_score);
-  });
+  //
+  //
+  // $('#card1').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card1.toggleStatus();
+  //   console.log("player1 flipped Card: " + player1.flippedCard);
+  //   console.log("card1 content: " + card1.content);
+  //   console.log("card1 status: " + card1.status);
+  //   if(card1.status===1 and) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //     $('#card2').removeClass('flipped');
+  //     $('#card2').addClass('unflipped');
+  //
+  //   } else if (this.flippedCard!=compareContent) {
+  //     $(this).removeClass('unflipped');
+  //   }else if (this.flippedCard===compareContent) {
+  //     $(this).addClass('flipped');
+  //   }else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card1.content);
+  //     console.log(player1.flippedCard);
+  //     console.log("card1 content: " + card1.content);
+  //   }else {
+  //     player1.updateScore(card1.content);
+  //     console.log(player1.flippedCard);
+  //     console.log("card1 content: " + card1.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  //
+  // $('#card2').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card2.toggleStatus();
+  //
+  //   if(card2.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card2.content);
+  //   }else {
+  //     player1.updateScore(card2.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  //
+  // $('#card3').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card3.toggleStatus();
+  //
+  //   if(card3.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card3.content);
+  //   }else {
+  //     player1.updateScore(card3.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card4').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card4.toggleStatus();
+  //
+  //   if(card4.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card4.content);
+  //   }else {
+  //     player1.updateScore(card4.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card5').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card5.toggleStatus();
+  //
+  //   if(card5.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card5.content);
+  //   }else {
+  //     player1.updateScore(card5.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card6').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card6.toggleStatus();
+  //
+  //   if(card6.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card6.content);
+  //   }else {
+  //     player1.updateScore(card6.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card7').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card7.toggleStatus();
+  //
+  //   if(card7.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card7.content);
+  //   }else {
+  //     player1.updateScore(card7.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card8').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card8.toggleStatus();
+  //
+  //   if(card8.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card8.content);
+  //   }else {
+  //     player1.updateScore(card8.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card9').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card9.toggleStatus();
+  //
+  //   if(card9.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card9.content);
+  //   }else {
+  //     player1.updateScore(card9.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card10').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card10.toggleStatus();
+  //
+  //   if(card10.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card10.content);
+  //   }else {
+  //     player1.updateScore(card10.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card11').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card11.toggleStatus();
+  //
+  //   if(card11.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card11.content);
+  //   }else {
+  //     player1.updateScore(card11.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
+  // $('#card12').click(function(event){
+  //   event.preventDefault();
+  //   // $('.flipped').toggle();
+  //   card12.toggleStatus();
+  //
+  //   if(card12.status===1) {
+  //     $(this).removeClass('unflipped');
+  //     $(this).addClass('flipped');
+  //   } else {
+  //     $(this).removeClass('flipped');
+  //     $(this).addClass('unflipped');
+  //   }
+  //   if (player1.flippedCard==="") {
+  //     player1.flipCard(card12.content);
+  //   }else {
+  //     player1.updateScore(card12.content);
+  //   }
+  //
+  //   var new_score = player1.score;
+  //   $('#player1_score').text(new_score);
+  // });
 
 });
 // document ready

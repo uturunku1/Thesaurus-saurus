@@ -13,6 +13,10 @@ Player.prototype.getScore = function () {
 Player.prototype.flipCard = function (flippedCard) {
   this.flippedCard = flippedCard;
 };
+Player.prototype.unflipCard = function () {
+  this.flippedCard = "";
+};
+
 // Player.prototype.updateScore = function (points) {
 //   console.log(points);
 //   console.log(this.score);
@@ -23,7 +27,10 @@ Player.prototype.updateScore = function (compareContent) {
   console.log("content: " + compareContent);
   console.log("score before: " + this.score);
   if (this.flippedCard===compareContent) {
-    this.score +=1;
+    this.score +=50;
+    this.flippedCard = "";
+  } else {
+    this.score -=10;
   }
   console.log("score after: " + this.score);
 };

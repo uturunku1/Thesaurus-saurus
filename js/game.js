@@ -70,6 +70,8 @@ Game.prototype.getDinos = function(displayDinos, displayErrors, card1, card2, ca
     card11.content =  shuffleArr[4];
     card12.content =  shuffleArr[5];
 
+		// Create deck of cards
+		
     // display card content // info is hidden for now
     displayDinos(contentArr, shuffleArr);
   })
