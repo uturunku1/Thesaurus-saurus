@@ -22,7 +22,7 @@ function Game(){
 //
 // }
 
-Game.prototype.getDinos = function(displayDinos, displayErrors){
+Game.prototype.getDinos = function(displayDinos, displayErrors, card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12){
 
 	var game = new Game();
   // Dino names calls
@@ -40,12 +40,12 @@ Game.prototype.getDinos = function(displayDinos, displayErrors){
     console.log("contentArr " + contentArr);
 
     // instantiate card objects
-    card1 = new Card('card1', response[0][0], 0);
-    card2 = new Card('card2', response[0][1], 0);
-    card3 = new Card('card3', response[0][2], 0);
-    card4 = new Card('card4', response[0][3], 0);
-    card5 = new Card('card5', response[0][4], 0);
-    card6 = new Card('card6', response[0][5], 0);
+    card1.content = response[0][0];
+    card2.content = response[0][1];
+    card3.content = response[0][2];
+    card4.content = response[0][3];
+    card5.content = response[0][4];
+    card6.content = response[0][5];
 
     // shuffle the content array
 		var indexArr = [];
@@ -63,12 +63,12 @@ Game.prototype.getDinos = function(displayDinos, displayErrors){
 		}
 
     console.log("shuffleArr " + shuffleArr);
-    card7 = new Card('card7', shuffleArr[0], 0);
-    card8 = new Card('card8', shuffleArr[1], 0);
-    card9 = new Card('card9', shuffleArr[2], 0);
-    card10 = new Card('card10', shuffleArr[3], 0);
-    card11 = new Card('card11', shuffleArr[4], 0);
-    card12 = new Card('card12', shuffleArr[5], 0);
+    card7.content = shuffleArr[0];
+    card8.content = shuffleArr[1];
+    card9.content = shuffleArr[2];
+    card10.content =  shuffleArr[3];
+    card11.content =  shuffleArr[4];
+    card12.content =  shuffleArr[5];
 
     // display card content // info is hidden for now
     displayDinos(contentArr, shuffleArr);

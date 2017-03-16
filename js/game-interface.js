@@ -2,18 +2,7 @@ var Card = require('./../js/card.js').cardModule;
 var Player = require('./../js/player.js').playerModule;
 var Game = require('./../js/game.js').gameModule;
 
-var card1 = new Card('card1', '', 0);
-var card2 = new Card('card2', '', 0);
-var card3 = new Card('card3', '', 0);
-var card4 = new Card('card4', '', 0);
-var card5 = new Card('card5', '', 0);
-var card6 = new Card('card6', '', 0);
-var card7 = new Card('card7', '', 0);
-var card8 = new Card('card8', '', 0);
-var card9 = new Card('card9', '', 0);
-var card10 = new Card('card10', '', 0);
-var card11 = new Card('card11', '', 0);
-var card12 = new Card('card12', '', 0);
+
 
 
 function displayDinos(contentArr, shuffleArr) {
@@ -49,6 +38,18 @@ function displayErrors(error){
 $(document).ready(function() {
   var player1;
   var player2;
+  var card1 = new Card('card1',"", 0);
+  var card2 = new Card('card2',"", 0);
+  var card3 = new Card('card3',"", 0);
+  var card4 = new Card('card4',"", 0);
+  var card5 = new Card('card5',"", 0);
+  var card6 = new Card('card6',"", 0);
+  var card7 = new Card('card7',"", 0);
+  var card8 = new Card('card8',"", 0);
+  var card9 = new Card('card9',"", 0);
+  var card10 = new Card('card10',"", 0);
+  var card11 = new Card('card11',"", 0);
+  var card12 = new Card('card12',"", 0);
 
 
   $('#intake-form').submit(function(event) {
@@ -62,7 +63,7 @@ $(document).ready(function() {
     var contentArr = [];
 
     // get Dinos from API
-    game1.getDinos(displayDinos, displayErrors);
+    game1.getDinos(displayDinos, displayErrors, card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12);
 
     // Form and Game display
     $('#game-setup').hide();
@@ -86,8 +87,9 @@ $(document).ready(function() {
     event.preventDefault();
     // $('.flipped').toggle();
     card1.toggleStatus();
-    console.log(player1.flippedCard);
-    console.log(card1.content);
+    console.log("player1 flipped Card: " + player1.flippedCard);
+    console.log("card1 content: " + card1.content);
+    console.log("card1 status: " + card1.status);
     if(card1.status===1) {
       $(this).removeClass('unflipped');
       $(this).addClass('flipped');
@@ -98,9 +100,11 @@ $(document).ready(function() {
     if (player1.flippedCard==="") {
       player1.flipCard(card1.content);
       console.log(player1.flippedCard);
+      console.log("card1 content: " + card1.content);
     }else {
       player1.updateScore(card1.content);
       console.log(player1.flippedCard);
+      console.log("card1 content: " + card1.content);
     }
 
     var new_score = player1.score;
